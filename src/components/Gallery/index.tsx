@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
-import {PRODUCT_GUTTER } from 'theme';
-import {ButtonBase, Grid, GridProps, styled } from '@mui/material';
-import ModalGallery, {Picture } from '../ModalGallery';
+import { PRODUCT_GUTTER } from 'theme';
+import { ButtonBase, Grid, GridProps, styled } from '@mui/material';
+import ModalGallery, { Picture } from '../ModalGallery';
 
 
 const ButtonBaseStyled = styled(ButtonBase)(() => ({
@@ -42,7 +42,7 @@ const Gallery: React.FC<Props> = ({ images, xs = 6, md = 3 }) => (
             <ButtonBaseStyled onClick={() => open(image)}>
               <FigureStyled>
                 <ImageStyled
-                  objectFit="fill"
+                  objectFit="cover"
                   placeholder="blur"
                   src={image.src}
                   height={300}
