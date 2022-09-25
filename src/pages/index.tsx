@@ -58,6 +58,7 @@ const Home: NextPage = () => {
   const pageTitle = t`Pessa Luciano Consulting - Tapis-Roulant per cavalli`;
   const pageDescription = t`Scopri il nostro tapis-roulant, il perfetto strumento per l'allenamento del tuo cavallo. Immancabile nel tuo maneggio.`;
 
+
   return (
     <>
       <Head>
@@ -65,7 +66,7 @@ const Home: NextPage = () => {
         <meta property="og:title" content={pageTitle} />
         <meta name="description" content={pageDescription} />
       </Head>
-      <Map src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2846.0477294405655!2d11.343928115940258!3d44.49368880569184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477fd4bef6c0af5d%3A0x3b2e8b12277e4b48!2sCa%20&#39;Fosca%20Due%20Torri!5e0!3m2!1sen!2snl!4v1664144230968!5m2!1sen!2snl" />
+      <Map src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4146.002660811926!2d11.3461168!3d44.493685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477fd4bef6c0af5d%3A0x3b2e8b12277e4b48!2sCa%20&#39;Fosca%20Due%20Torri!5e1!3m2!1sen!2snl!4v1664144478739!5m2!1sen!2snl" />
 
       <Section spacing={4}>
         <Trans>Nel cuore del centro storico, sotto le Due Torri, in un raro e luminoso attico art decò, dove il terrazzo affaccia sui tetti, sulle cupole e sulle torri merlate della Bologna medievale, il B&B Cà Fosca vi offre un&apos;ospitalità esclusiva ed elegante, un&apos;accoglienza attenta e di grande atmosfera...</Trans>
