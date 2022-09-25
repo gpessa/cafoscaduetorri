@@ -18,7 +18,7 @@ import { Organization } from 'schema-dts';
 import createEmotionCache from 'utility';
 import theme from '../theme';
 
-export type MyAppProps = AppProps & { emotionCache: EmotionCache, messages: any };
+export type MyAppProps = AppProps<{ messages: any }> & { emotionCache: EmotionCache };
 
 const address: AddressProps = {
   name: 'Pessa Luciano Consulting',
