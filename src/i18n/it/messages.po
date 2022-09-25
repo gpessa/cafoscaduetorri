@@ -1,0 +1,62 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2022-04-23 01:27+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: it\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: src/components/ModalGallery/index.tsx:81
+msgid "Avanti"
+msgstr "Avanti"
+
+#: src/components/Address/index.tsx:62
+msgid "Email"
+msgstr "Email"
+
+#: src/components/ModalGallery/index.tsx:73
+msgid "Indietro"
+msgstr "Indietro"
+
+#: src/pages/404.tsx:14
+msgid "La pagina che stai cercando non esiste"
+msgstr "La pagina che stai cercando non esiste"
+
+#: src/pages/404.tsx:11
+msgid "Pagina non trovata"
+msgstr "Pagina non trovata"
+
+#: src/components/Address/index.tsx:70
+msgid "Partita IVA"
+msgstr "Partita IVA"
+
+#: src/components/Footer/index.tsx:16
+msgid "Pessa Luciano Consulting"
+msgstr "Pessa Luciano Consulting"
+
+#: src/pages/index.tsx:8
+msgid "Pessa Luciano Consulting - Tapis-Roulant per cavalli"
+msgstr "Pessa Luciano Consulting - Tapis-Roulant per cavalli"
+
+#: src/pages/index.tsx:9
+msgid "Scopri il nostro tapis-roulant, il perfetto strumento per l'allenamento del tuo cavallo. Immancabile nel tuo maneggio."
+msgstr "Scopri il nostro tapis-roulant, il perfetto strumento per l'allenamento del tuo cavallo. Immancabile nel tuo maneggio."
+
+#: src/pages/_app.tsx:98
+msgid "Supporto clienti"
+msgstr "Supporto clienti"
+
+#: src/components/Address/index.tsx:44
+msgid "Telefono"
+msgstr "Telefono"
+
+#: src/components/Address/index.tsx:52
+msgid "WhatsApp"
+msgstr "WhatsApp"

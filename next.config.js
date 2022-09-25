@@ -1,7 +1,22 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+
+
+module.exports = {
   reactStrictMode: true,
   swcMinify: true,
-}
+  i18n: {
+    locales: ['it', 'fr', 'en'],
+    defaultLocale: 'it'
+  },
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.po/,
+      use: ['@lingui/loader'],
+    })
 
-module.exports = nextConfig
+    return config;
+  },
+  future: {
+    webpack5: true,
+  }
+}

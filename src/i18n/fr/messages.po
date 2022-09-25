@@ -1,0 +1,62 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-25 20:18+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.1.1\n"
+
+#: src/components/ModalGallery/index.tsx:81
+msgid "Avanti"
+msgstr "Suivante"
+
+#: src/components/Address/index.tsx:62
+msgid "Email"
+msgstr "E-mail"
+
+#: src/components/ModalGallery/index.tsx:73
+msgid "Indietro"
+msgstr "Précédent"
+
+#: src/pages/404.tsx:14
+msgid "La pagina che stai cercando non esiste"
+msgstr "La page que vous recherchez n&apos;existe pas"
+
+#: src/pages/404.tsx:11
+msgid "Pagina non trovata"
+msgstr "Le page que tu demandes n&apos;existes pas"
+
+#: src/components/Address/index.tsx:70
+msgid "Partita IVA"
+msgstr "Numéro de TVA"
+
+#: src/components/Footer/index.tsx:16
+msgid "Pessa Luciano Consulting"
+msgstr ""
+
+#: src/pages/index.tsx:8
+msgid "Pessa Luciano Consulting - Tapis-Roulant per cavalli"
+msgstr "Pessa Luciano Consulting - Tapis roulant pour chevaux"
+
+#: src/pages/index.tsx:9
+msgid "Scopri il nostro tapis-roulant, il perfetto strumento per l'allenamento del tuo cavallo. Immancabile nel tuo maneggio."
+msgstr "Découvrez notre tapis de course, l&apos;outil parfait pour entraîner votre cheval. Incontournable dans votre centre équestre."
+
+#: src/pages/_app.tsx:98
+msgid "Supporto clienti"
+msgstr "Service client"
+
+#: src/components/Address/index.tsx:44
+msgid "Telefono"
+msgstr "Numéro de téléphone"
+
+#: src/components/Address/index.tsx:52
+msgid "WhatsApp"
+msgstr "WhatsApp"
