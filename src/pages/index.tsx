@@ -8,7 +8,6 @@ import { Trans } from '@lingui/macro';
 import { Typography } from '@mui/material';
 
 const images = [
-  { caption: "", src: require("../assets/photos/senza titolo-1-3.jpg") },
   { caption: "", src: require("../assets/photos/senza titolo-2-2.jpg") },
   { caption: "", src: require("../assets/photos/senza titolo-5-2.jpg") },
   { caption: "", src: require("../assets/photos/senza titolo-13-2.jpg") },
@@ -30,7 +29,6 @@ const images = [
   { caption: "", src: require("../assets/photos/senza titolo-70-2.jpg") },
   { caption: "", src: require("../assets/photos/senza titolo-72.jpg") },
   { caption: "", src: require("../assets/photos/senza titolo-74-2.jpg") },
-  { caption: "", src: require("../assets/photos/senza titolo-75-2.jpg") },
   { caption: "", src: require("../assets/photos/senza titolo-76.jpg") },
   { caption: "", src: require("../assets/photos/senza titolo-78-2.jpg") },
   { caption: "", src: require("../assets/photos/senza titolo-80.jpg") },
