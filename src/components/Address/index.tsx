@@ -20,6 +20,7 @@ const Address: React.FC<AddressProps> = ({
   streetAddress,
   telephone,
   email,
+  mobile,
   ...Addressprops
 }) => {
   const hasAddress = streetAddress != undefined;
@@ -36,6 +37,15 @@ const Address: React.FC<AddressProps> = ({
           <span>{postalCode}</span>, <span>{addressRegion}</span> (
           <span>{country}</span>)
         </Box>
+      )}
+
+      {mobile && (
+        <Data
+          icon={<LocalPhoneOutlinedIcon />}
+          label={<Trans>Telefono mobile</Trans>}
+          value={mobile}
+          href={`tel:${mobile.replace(/ /g, '')}`}
+        />
       )}
 
       {telephone && (
@@ -87,6 +97,7 @@ export interface AddressProps {
   streetAddress?: string;
   addressLocality?: string;
   id?: string;
+  mobile?: string;
   telephone?: string;
   className?: string;
 }

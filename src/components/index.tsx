@@ -6,3 +6,4 @@ export { default as Title } from './Title';
 export { default as Header } from './Header';
 export { default as Address } from './Address';
 export { default as Data } from './Data';
+export { default as Map } from './Map';

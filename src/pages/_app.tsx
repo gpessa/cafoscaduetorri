@@ -20,17 +20,19 @@ import theme from '../theme';
 
 export type MyAppProps = AppProps<{ messages: any }> & { emotionCache: EmotionCache };
 
-const address: AddressProps = {
-  name: 'Pessa Luciano Consulting',
-  telephone: '+39 348 4102805',
-  email: 'lucianopessa@gmail.com',
-  streetAddress: 'Via Scaligera 52',
-  addressLocality: 'Montagnana',
-  addressRegion: 'Padova',
+
+
+export const address: AddressProps = {
+  name: 'Ca’ Fosca Due Torri - Bed & Breakfast',
+  telephone: '+39 051 261221',
+  mobile: '+39 335 314761',
+  email: 'cafoscaduetorri@gmail.com',
+  streetAddress: 'Via Caprarie n. 7',
+  addressLocality: 'Bologna',
+  addressRegion: 'BO',
   country: 'Italy',
-  postalCode: '35044',
-  whatsapp: '+39 348 4102805',
-  id: '05323870286',
+  postalCode: '40123',
+  whatsapp: ' +39 335 314761',
 };
 
 const PLURALS: any = {
@@ -45,7 +47,7 @@ const clientSideEmotionCache = createEmotionCache();
 const MyApp = (props: MyAppProps) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   const { locale, events, locales, asPath } = useRouter()
-  const brand = 'Pessa Luciano Consulting';
+  const brand = address.name
 
   i18n.loadLocaleData(locale!, { plurals: PLURALS[locale!] })
   i18n.load(locale!, pageProps.messages)
