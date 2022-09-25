@@ -4,7 +4,7 @@ import { Trans } from '@lingui/macro';
 import AlternateEmailOutlinedIcon from '@mui/icons-material/AlternateEmailOutlined';
 import BadgeIcon from '@mui/icons-material/Badge';
 import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
-import WhatsappOutlinedIcon from '@mui/icons-material/WhatsappOutlined';
+import WhatsappOutlinedIcon from '@mui/icons-material/WhatsApp';
 import { Box, Stack, Typography } from '@mui/material';
 
 
