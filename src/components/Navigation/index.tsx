@@ -9,7 +9,7 @@ import {
   ListItem,
   styled,
   Button,
-  Toolbar, useTheme
+  Toolbar, useTheme, useScrollTrigger
 } from "@mui/material";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -67,17 +67,17 @@ const NavigationMobile = styled(Box)(({ theme }) => ({
   },
 }))
 
-// const ElevationScroll: React.FC<{}> = ({ children }) => {
-//   const trigger = useScrollTrigger({
-//     disableHysteresis: true,
-//     target: typeof window !== `undefined` ? window : undefined,
-//     threshold: 0,
-//   })
+const ElevationScroll: React.FC<{ children: JSX.Element }> = ({ children }) => {
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    target: typeof window !== `undefined` ? window : undefined,
+    threshold: 0,
+  })
 
-//   return React.cloneElement(children, {
-//     elevation: trigger ? 4 : 0,
-//   })
-// }
+  return React.cloneElement(children, {
+    elevation: trigger ? 4 : 0,
+  })
+}
 
 const Navigation: React.FC = () => {
   const [open, setOpen] = useState(false)
@@ -100,46 +100,48 @@ const Navigation: React.FC = () => {
   }
 
   return (
-    <AppBar position="sticky" color="inherit">
-      <ToolbarStyled>
-        <Logo />
+    <ElevationScroll>
+      <AppBar position="sticky" color="inherit">
+        <ToolbarStyled>
+          <Logo />
 
-        <NavigationDesktop>
-          {NAVIGATION.map(({ href, title }) => (
-            <Link passHref href={href} key={href}>
-              <Button variant="text">
-                {title}
-              </Button>
-            </Link>
-          ))}
-          <NavigationDesktopDivider />
-          <LanguageSelector />
-        </NavigationDesktop>
+          <NavigationDesktop>
+            {NAVIGATION.map(({ href, title }) => (
+              <Link passHref href={href} key={href}>
+                <Button variant="text">
+                  {title}
+                </Button>
+              </Link>
+            ))}
+            <NavigationDesktopDivider />
+            <LanguageSelector />
+          </NavigationDesktop>
 
-        <NavigationMobile>
-          <LanguageSelector />
-          <NavigationDesktopDivider />
-          <IconButton edge="end" size="large" color="primary" aria-label="Main menu" onClick={handleMenuToggle}>
-            <Menu />
-          </IconButton>
-        </NavigationMobile>
-      </ToolbarStyled>
+          <NavigationMobile>
+            <LanguageSelector />
+            <NavigationDesktopDivider />
+            <IconButton edge="end" size="large" color="primary" aria-label="Main menu" onClick={handleMenuToggle}>
+              <Menu />
+            </IconButton>
+          </NavigationMobile>
+        </ToolbarStyled>
 
-      {open && (
-        <MenuMobileStyled>
-          {NAVIGATION.map(({ href, title }) => (
-            <Link passHref href={href} key={href}>
-              <ListItem
-                key={href}
-                component="a"
-              >
-                {title}
-              </ListItem>
-            </Link>
-          ))}
-        </MenuMobileStyled>
-      )}
-    </AppBar>
+        {open && (
+          <MenuMobileStyled>
+            {NAVIGATION.map(({ href, title }) => (
+              <Link passHref href={href} key={href}>
+                <ListItem
+                  key={href}
+                  component="a"
+                >
+                  {title}
+                </ListItem>
+              </Link>
+            ))}
+          </MenuMobileStyled>
+        )}
+      </AppBar>
+    </ElevationScroll>
   )
 }
 
