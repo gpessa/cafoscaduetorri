@@ -5,7 +5,7 @@ import { t } from '@lingui/macro';
 import { I18nProvider } from '@lingui/react';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
-import { Footer, Header } from 'components';
+import { Footer, Navigation } from 'components';
 import { AddressProps } from 'components/Address';
 import * as ga from 'hooks/useGoogleAnalytics';
 import { en, fr, it } from 'make-plural/plurals';
@@ -112,7 +112,7 @@ const MyApp = (props: MyAppProps) => {
         <ThemeProvider theme={theme}>
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
-          <Header />
+          <Navigation />
           <Component {...pageProps} />
           <Footer />
         </ThemeProvider>

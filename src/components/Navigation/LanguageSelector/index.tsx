@@ -1,12 +1,13 @@
-/* eslint-disable react/no-children-prop */
-import { AppBar, Avatar, Link, IconButton, Menu, MenuItem, styled } from '@mui/material';
-import Image from 'next/image';
+
+import { Avatar, IconButton, Menu, MenuItem, styled } from "@mui/material";
+import { useRouter } from "next/router";
+import * as React from "react";
+import { useState } from "react";
 import NextLink from 'next/link';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
-import FlagFr from '../../assets/flags/fr.svg';
-import FlagEn from '../../assets/flags/gb.svg';
-import FlagIt from '../../assets/flags/it.svg';
+
+import FlagFr from '../../../assets/flags/fr.svg';
+import FlagEn from '../../../assets/flags/gb.svg';
+import FlagIt from '../../../assets/flags/it.svg';
 
 
 const FLAGS = {
@@ -15,13 +16,7 @@ const FLAGS = {
   it: FlagIt,
 };
 
-const AppBarStyled = styled(AppBar)(({ theme }) => ({
-  paddingBottom: theme.spacing(4),
-  paddingTop: theme.spacing(4),
-  position: 'relative',
-  alignItems: 'center',
-  border: 0,
-}));
+
 
 const LanguageStyled = styled(IconButton)(({ theme }) => ({
   transform: 'translateY(-50%)',
@@ -30,12 +25,9 @@ const LanguageStyled = styled(IconButton)(({ theme }) => ({
   top: '50%',
 }));
 
-const ImageWrapper = styled(Link)(({ theme }) => ({
-  borderBottom: `${theme.spacing(1 / 2)} solid ${theme.palette.primary.main}`,
-  paddingBottom: theme.spacing(1 / 2),
-}));
 
-const Header = () => {
+
+const LanguageSelector: React.FC = () => {
   const { locale: currentLocale, locales } = useRouter();
   const [anchorEl, setAnchorEl] = useState<HTMLElement>();
   const open = Boolean(anchorEl);
@@ -49,27 +41,14 @@ const Header = () => {
     setAnchorEl(undefined);
   };
 
-  return (
+  return hasMultipleLocales ? (
     <>
-      <AppBarStyled elevation={0} color="transparent" position="relative">
-
-        <NextLink
-          passHref
-          href="/"
-          children={
-            <ImageWrapper></ImageWrapper>
-          }
+      <LanguageStyled onClick={handleClick}>
+        <Avatar
+          src={FLAGS[currentLocale as keyof typeof FLAGS].src}
+          sx={{ width: 24, height: 24 }}
         />
-
-        {hasMultipleLocales && (
-          <LanguageStyled onClick={handleClick}>
-            <Avatar
-              src={FLAGS[currentLocale as keyof typeof FLAGS].src}
-              sx={{ width: 24, height: 24 }}
-            />
-          </LanguageStyled>
-        )}
-      </AppBarStyled>
+      </LanguageStyled>
 
       <Menu
         anchorEl={anchorEl}
@@ -101,7 +80,7 @@ const Header = () => {
         ))}
       </Menu>
     </>
-  );
-};
+  ) : null
+}
 
-export default Header;
+export default LanguageSelector
