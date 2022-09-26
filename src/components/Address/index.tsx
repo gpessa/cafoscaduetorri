@@ -42,7 +42,7 @@ const Address: React.FC<AddressProps> = ({
       {mobile && (
         <Data
           icon={<LocalPhoneOutlinedIcon />}
-          label={<Trans>Telefono mobile</Trans>}
+          label={<Trans>Cellulare</Trans>}
           value={mobile}
           href={`tel:${mobile.replace(/ /g, '')}`}
         />
