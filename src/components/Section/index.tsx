@@ -1,7 +1,6 @@
-import { event } from 'hooks/useGoogleAnalytics';
-import React, { useRef } from 'react';
+import React from 'react';
 import { BREAKPOINT } from 'theme';
-import { Container, ContainerProps, styled } from '@mui/material';
+import { Container, ContainerProps, Palette, styled } from '@mui/material';
 
 
 const DIMENSION_CONFIGURATION = {
@@ -18,7 +17,7 @@ const DIMENSION_CONFIGURATION = {
 export type SectionProps = {
   image?: 'dots';
   type?: 'vertical' | 'horizontal';
-  color?: 'primary' | 'warm1' | 'warm2' | 'darkGray' | 'black';
+  color?: keyof Palette;
   spacing?: number;
 } & Pick<
   ContainerProps,

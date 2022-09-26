@@ -68,10 +68,10 @@ const Home: NextPage = () => {
       </Head>
       <Map src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4146.002660811926!2d11.3461168!3d44.493685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477fd4bef6c0af5d%3A0x3b2e8b12277e4b48!2sCa%20&#39;Fosca%20Due%20Torri!5e1!3m2!1sen!2snl!4v1664144478739!5m2!1sen!2snl" />
 
-      <Section spacing={4}>
+      <Section spacing={4} color="primary">
         <Trans>Nel cuore del centro storico, sotto le Due Torri, in un raro e luminoso attico art decò, dove il terrazzo affaccia sui tetti, sulle cupole e sulle torri merlate della Bologna medievale, il B&B Cà Fosca vi offre un&apos;ospitalità esclusiva ed elegante, un&apos;accoglienza attenta e di grande atmosfera...</Trans>
       </Section>
-      <Section spacing={4}>
+      <Section spacing={4} color="artichoke">
         <Title title={
           <Trans>La casa</Trans>} />
         <Typography>
@@ -95,9 +95,9 @@ const Home: NextPage = () => {
           Sarà Ca&apos;Fosca a prenotare per voi, mentre starete degustando ottimi vini e formaggi tipici.
         </Typography>
       </Section>
-      <Section spacing={4}>
+      <Section spacing={4} color="ecru">
         <Title title={
-          <Trans>BED</Trans>} />
+          <Trans>Bed</Trans>} />
         <Typography>
           Al ritorno, dopo un ultimo passito con i cantucci e le disposizioni
           per il breakfast del giorno dopo, servito all&apos;ora che preferirete,
@@ -112,9 +112,9 @@ const Home: NextPage = () => {
           matrimoniale bianca/blu può essere adibita ad uso singola.
         </Typography>
       </Section>
-      <Section spacing={4}>
+      <Section spacing={4} color="metallicSunburst">
         <Title title={
-          <Trans>BREAKFAST</Trans>} />
+          <Trans>Breakfast</Trans>} />
         <Typography>
           Caffè, Espresso, Cappuccino, The inglesi, cinesi, indiani aromatici, the verde,
           spremute di arancio, yogurt .
@@ -127,9 +127,9 @@ const Home: NextPage = () => {
 
         </Typography>
       </Section>
-      <Section spacing={4}>
+      <Section spacing={4} color="alabaster">
         <Title title={
-          <Trans>OSPITALITA&apos;</Trans>} />
+          <Trans>Ospitalitá</Trans>} />
         <Typography>
           Siete a Bologna per turismo, per lavoro,
           per studio?
@@ -156,9 +156,9 @@ const Home: NextPage = () => {
 
         </Typography>
       </Section>
-      <Section spacing={4}>
+      <Section spacing={4} color="kobe">
         <Title title={
-          <Trans>PRENOTAZIONI</Trans>} />
+          <Trans>Prenotazioni</Trans>} />
         <Typography>
           A caparra è richiesto prepagamento di 1 notte NON RIMBORSABILE a disdetta per periodo &lt; 2 giorni
           oppure caparra confirmatoria anticipata del 50% non rimborsabile per periodi &gt;	2 giorni tramite:
@@ -173,7 +173,7 @@ const Home: NextPage = () => {
       </Section>
       <Section spacing={4}>
         <Title title={
-          <Trans>PREZZI</Trans>} />
+          <Trans>Prezzi</Trans>} />
         <Typography>
           CAMERA DOPPIA uso singola con bagno € 110/170
           CAMERA DOPPIA con bagno € 130/250 Letto aggiunto € 160/280
