@@ -5,7 +5,7 @@ import { Section } from "components"
 export { getStaticProps } from '../utility';
 
 const NotFound: React.FC = () => (
-  <Section spacing={10} color="warm1">
+  <Section spacing={10}>
     <Box textAlign="center">
       <Typography variant="h2">
         <Trans>Pagina non trovata</Trans>

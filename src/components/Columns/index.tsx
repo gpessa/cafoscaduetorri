@@ -1,16 +1,15 @@
-import React, {ReactNode } from 'react';
-import {BREAKPOINT } from 'theme';
-import {Container, Grid, styled } from '@mui/material';
-import Section from '../Section';
+import React, { ReactNode } from 'react';
+import { BREAKPOINT } from 'theme';
+import { Grid, styled } from '@mui/material';
+import Section, { SectionProps } from '../Section';
 
 
-interface Props {
+type Props = {
   left: ReactNode;
   right: ReactNode;
-}
+} & SectionProps
 
 const SectionStyled = styled(Section)(({ theme }) => ({
-  position: 'relative',
   padding: 0,
   [theme.breakpoints.up(BREAKPOINT)]: {
     background: `linear-gradient(90deg, ${theme.palette.primary.main} 50%, ${theme.palette.common.white} 50%)`,
@@ -39,19 +38,17 @@ const RightColumn = styled(Grid)(({ theme }) => ({
   },
 }));
 
-const Footer = ({ left, right }: Props) => (
-  <SectionStyled disableGutters={true}>
-    <Container disableGutters>
-      <Grid container>
-        <LeftColumn item xs={12} md={6}>
-          {left}
-        </LeftColumn>
-        <RightColumn item xs={12} md={6}>
-          {right}
-        </RightColumn>
-      </Grid>
-    </Container>
+const Columns: React.FC<Props> = ({ left, right, ...props }) => (
+  <SectionStyled {...props}>
+    <Grid container alignItems={'center'}>
+      <LeftColumn item xs={12} md={6}>
+        {left}
+      </LeftColumn>
+      <RightColumn item xs={12} md={6}>
+        {right}
+      </RightColumn>
+    </Grid>
   </SectionStyled>
 );
 
-export default Footer;
+export default Columns;

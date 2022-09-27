@@ -1,6 +1,6 @@
 import React from 'react';
-import {BREAKPOINT } from 'theme';
-import {Box, BoxProps, styled, Typography } from '@mui/material';
+import { BREAKPOINT } from 'theme';
+import { Box, BoxProps, styled, Typography } from '@mui/material';
 
 
 export type Props = {
@@ -30,7 +30,7 @@ const Title: React.FC<Props> = ({
         {subtitle}
       </Typography>
     )}
-    <Typography variant="h3" color={color} gutterBottom>
+    <Typography variant="h4" color={color} gutterBottom>
       {title}
     </Typography>
     {text && <>{text}</>}

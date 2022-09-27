@@ -15,8 +15,8 @@ const CaTuate: NextPage = () => {
         <title>{pageTitle}</title>
         <meta property="og:title" content={pageTitle} />
         <meta name="description" content={pageDescription} />
+
       </Head>
-      <h1>dsds</h1>
     </>);
 };
 

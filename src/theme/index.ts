@@ -41,8 +41,8 @@ declare module "@mui/material/styles/createPalette" {
   }
 }
 
-const FONT_BASE = "Poppins";
-const FONT_TITLE = "Inter"
+const FONT_BASE = "Raleway";
+const FONT_TITLE = "Lora"
 
 const themePalette = createTheme({
   typography: {
@@ -79,7 +79,7 @@ const themePalette = createTheme({
 
 const theme = createTheme(themePalette, {
   shape: {
-    borderRadius: 20,
+    borderRadius: false,
   },
   spacing: (factor: number) => `${7 * factor}px `,
   typography: {
@@ -87,44 +87,47 @@ const theme = createTheme(themePalette, {
       fontSize: "0.85rem",
     },
     h1: {
-      color: 'rgba(0, 0, 0, 0.87)',
       fontFamily: FONT_TITLE,
+      fontWeight: 600,
       fontSize: 78,
       lineHeight: 74 / 91,
     },
     h2: {
-      color: 'rgba(0, 0, 0, 0.87)',
       fontFamily: FONT_TITLE,
+      fontWeight: 600,
       fontSize: 57,
       lineHeight: 56 / 57,
     },
     h3: {
-      color: 'rgba(0, 0, 0, 0.87)',
       fontFamily: FONT_TITLE,
+      fontWeight: 600,
       lineHeight: 1,
       fontSize: 35,
     },
     h4: {
-      color: 'rgba(0, 0, 0, 0.87)',
       fontFamily: FONT_TITLE,
+      fontWeight: 600,
       lineHeight: 1.1,
       fontSize: 28,
     },
     h5: {
-      color: 'rgba(0, 0, 0, 0.87)',
       fontFamily: FONT_TITLE,
+      fontWeight: 600,
       lineHeight: 1.1,
       fontSize: 23,
     },
     h6: {
-      color: 'rgba(0, 0, 0, 0.87)',
       fontFamily: FONT_TITLE,
+      fontWeight: 600,
       lineHeight: 1.1,
       fontSize: 18,
     },
     caption: {
       fontWeight: 600,
       color: PALETTE.Alabaster
+    },
+    body2: {
+      fontSize: 24,
     }
   },
   components: {

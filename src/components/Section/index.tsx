@@ -25,7 +25,7 @@ export type SectionProps = {
 >;
 
 const SectionStyled = styled(Container)<SectionProps>(
-  ({ theme, spacing = 16, image, color, type }) => ({
+  ({ theme, spacing = 3, image, color, type }) => ({
     overflow: 'hidden',
     position: 'relative',
     paddingTop: theme.spacing(spacing / 2),
@@ -63,16 +63,15 @@ const SectionStyledColored = styled(SectionStyled)<SectionProps>(
 );
 
 const StyledContainer = styled(Container)(() => ({
-  position: 'relative',
+  // position: 'relative',
 }));
 
-const Section: React.FC<SectionProps> = ({ maxWidth, ...props }) => {
-  return (
-    <SectionStyledColored {...props} maxWidth={false}>
-      <StyledContainer disableGutters maxWidth={maxWidth}>
-        {props.children}
-      </StyledContainer>
-    </SectionStyledColored>
-  );
-};
+const Section: React.FC<SectionProps> = ({ maxWidth, ...props }) => (
+  <SectionStyledColored {...props} maxWidth={false}>
+    <StyledContainer disableGutters maxWidth={maxWidth}>
+      {props.children}
+    </StyledContainer>
+  </SectionStyledColored>
+);
+
 export default Section;

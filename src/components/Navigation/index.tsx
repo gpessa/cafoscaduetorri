@@ -3,13 +3,11 @@ import { Trans } from '@lingui/macro';
 import Menu from "@mui/icons-material/Menu";
 import {
   AppBar,
-  Box, Divider,
+  Box, Button, Divider,
   IconButton,
   List,
   ListItem,
-  styled,
-  Button,
-  Toolbar, useTheme, useScrollTrigger
+  styled, Toolbar, useScrollTrigger, useTheme
 } from "@mui/material";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -17,7 +15,7 @@ import { BREAKPOINT } from "theme";
 import LanguageSelector from "./LanguageSelector";
 import Logo from "./Logo";
 
-const MenuMobileStyled = styled(List)(({ theme }) => ({
+const NavigationMobileMenu = styled(List)(({ theme }) => ({
   display: "block",
   [theme.breakpoints.up(BREAKPOINT)]: {
     display: "none",
@@ -28,44 +26,35 @@ const ToolbarStyled = styled(Toolbar)(() => ({
   justifyContent: "space-between",
 }))
 
-const NavigationDesktop = styled(Box)(({ theme }) => ({
+const NavigationMenu = styled(Box)(({ theme }) => ({
   alignItems: "center",
   width: "fit-content",
-  display: "none",
+}))
+
+const NavigationDesktopButtom = styled(Button)(({ theme }) => ({
+  color: theme.palette.primary.main,
+  display: 'none',
   [theme.breakpoints.up(BREAKPOINT)]: {
     display: "flex",
   },
 }))
 
-const NavigationDesktopButtom = styled(Button)(({ theme }) => ({
-}))
 NavigationDesktopButtom.defaultProps = {
   variant: "text"
 }
 
-const NavigationDesktopDivider = styled(Divider)(({ theme }) => ({
+const NavigationDivider = styled(Divider)(({ theme }) => ({
   marginBottom: theme.spacing(2),
   marginTop: theme.spacing(2),
   margin: theme.spacing(3),
-  display: "none",
-  [theme.breakpoints.up(BREAKPOINT)]: {
-    display: "unset",
-  },
+  height: 20
 }))
 
-NavigationDesktopDivider.defaultProps = {
+NavigationDivider.defaultProps = {
   orientation: "vertical",
   flexItem: true,
 }
 
-const NavigationMobile = styled(Box)(({ theme }) => ({
-  alignItems: "center",
-  width: "fit-content",
-  display: "flex",
-  [theme.breakpoints.up(BREAKPOINT)]: {
-    display: "none",
-  },
-}))
 
 const ElevationScroll: React.FC<{ children: JSX.Element }> = ({ children }) => {
   const trigger = useScrollTrigger({
@@ -88,7 +77,8 @@ const Navigation: React.FC = () => {
     title: JSX.Element;
   }[] = [
       { href: "/ca-tuate", title: <Trans>Ca&apos; Tuate</Trans> },
-      { href: "/", title: <Trans>Ca&apos; Fosca</Trans> }
+      { href: "/", title: <Trans>Ca&apos; Fosca</Trans> },
+      { href: '/#contacts', title: <Trans>Contatti</Trans> }
     ]
 
   const handleMenuToggle = () => {
@@ -102,32 +92,34 @@ const Navigation: React.FC = () => {
   return (
     <ElevationScroll>
       <AppBar position="sticky" color="inherit">
+
         <ToolbarStyled>
+
           <Logo />
 
-          <NavigationDesktop>
+          <NavigationMenu>
             {NAVIGATION.map(({ href, title }) => (
               <Link passHref href={href} key={href}>
-                <Button variant="text">
+                <Button color="inherit" variant="text">
                   {title}
                 </Button>
               </Link>
             ))}
-            <NavigationDesktopDivider />
-            <LanguageSelector />
-          </NavigationDesktop>
 
-          <NavigationMobile>
-            <LanguageSelector />
-            <NavigationDesktopDivider />
             <IconButton edge="end" size="large" color="primary" aria-label="Main menu" onClick={handleMenuToggle}>
               <Menu />
             </IconButton>
-          </NavigationMobile>
+
+            <Divider flexItem orientation='vertical' />
+
+            <LanguageSelector />
+
+          </NavigationMenu>
+
         </ToolbarStyled>
 
         {open && (
-          <MenuMobileStyled>
+          <NavigationMobileMenu>
             {NAVIGATION.map(({ href, title }) => (
               <Link passHref href={href} key={href}>
                 <ListItem
@@ -138,7 +130,7 @@ const Navigation: React.FC = () => {
                 </ListItem>
               </Link>
             ))}
-          </MenuMobileStyled>
+          </NavigationMobileMenu>
         )}
       </AppBar>
     </ElevationScroll>

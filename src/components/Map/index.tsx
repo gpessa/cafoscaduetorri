@@ -8,8 +8,8 @@ const BoxStyled = styled(Box)({
   height,
 })
 
-const Map: React.FC<{ src: string }> = ({ src }) => (
-  <BoxStyled>
+const Map: React.FC<{ src: string }> = ({ src, ...props }) => (
+  <BoxStyled {...props}>
     <iframe
       width="100%"
       height={height}

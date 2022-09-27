@@ -1,26 +1,26 @@
-import { Stack, styled } from "@mui/material"
+import { Stack, styled, Typography } from "@mui/material"
 import Link from "next/link"
 import React from "react"
-import { BREAKPOINT } from "theme"
 
 const DIM = 50
 
-const TitleStyled = styled("h1")(({ theme }) => ({
+const TitleStyled = styled(Typography)(({ theme }) => ({
+  fontFamily: theme.typography.h1.fontFamily,
   color: theme.palette.common.black,
   lineHeight: `${28 * 0.7}px`,
   textTransform: "uppercase",
   margin: "3px 0 0 0",
+  fontWeight: 600,
   fontSize: 28,
 }))
 
-const SubtitleStyled = styled("div")(({ theme }) => ({
+const SubtitleStyled = styled(Typography)(({ theme }) => ({
   color: theme.palette.primary.main,
   lineHeight: `${12 * 0.7}px`,
-  textTransform: "uppercase",
-  fontWeight: "normal",
-  letterSpacing: 3.7,
-  fontSize: 12,
-  marginTop: 6,
+  marginTop: theme.spacing(1),
+  fontWeight: 500,
+  letterSpacing: 4,
+  fontSize: 13,
 }))
 
 

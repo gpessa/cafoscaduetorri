@@ -10,7 +10,7 @@ export default class MyDocument extends Document {
           {/* @ts-ignore */}
           {this.props.emotionStyleTags}
           <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Poppins:wght@200;400&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Raleway:wght@200;400;500&Lora:wght@200,400,600&display=swap"
             rel="stylesheet"
           />
 
