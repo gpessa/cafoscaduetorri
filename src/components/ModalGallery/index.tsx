@@ -5,6 +5,7 @@ import React from 'react';
 import { Trans } from '@lingui/macro';
 import { NavigateBefore, NavigateNext } from '@mui/icons-material';
 import { Button, ButtonBase, Dialog, styled, Typography } from '@mui/material';
+import { height } from '@mui/system';
 
 const ButtonBackStyled = styled(ButtonBase)({
   top: 0,
@@ -30,8 +31,9 @@ const ButtonNextStyled = styled(ButtonBase)({
   },
 });
 
-const ImageStyled = styled(Image)({
-  width: '100%',
+const ImageStyled = styled('img')({
+  maxWidth: '100%',
+  maxHeight: '100%'
 });
 
 const StyledCaption = styled(Typography)(({ theme }) => ({
@@ -46,7 +48,7 @@ const StyledCaption = styled(Typography)(({ theme }) => ({
 }));
 
 export type Picture = {
-  src: string;
+  src: any;
   caption?: string | JSX.Element;
 };
 
@@ -58,14 +60,16 @@ type Props = {
 const ModalGallery: React.FC<Props> = ({ render, images }) => {
   const gallery = useGallery(images);
 
+  console.log(gallery.active)
   return (
     <>
       {render(gallery)}
 
-      <Dialog open={!!gallery.active} onClose={gallery.close} maxWidth="md">
+      <Dialog open={!!gallery.active} onClose={gallery.close} maxWidth="md" >
         {gallery.active && (
           <>
-            <ImageStyled src={gallery.active.src} height={800} width={800} />
+
+            <ImageStyled src={gallery.active.src.default.src} />
 
             {gallery.showPreviousEnabled && (
               <ButtonBackStyled onClick={gallery.showPrevious}>

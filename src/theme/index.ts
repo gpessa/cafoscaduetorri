@@ -7,7 +7,8 @@ const PALETTE = {
   Kobe: "#832E10",
   Xiketic: "#131121",
   Artichoke: "#868960",
-  DarkOliveGreen: "#607045"
+  DarkOliveGreen: "#607045",
+  Bone: "#D7D1BA"
 }
 
 
@@ -29,6 +30,7 @@ declare module "@mui/material/styles/createPalette" {
     metallicSunburst: Palette["primary"]
     alabaster: Palette["primary"]
     kobe: Palette["primary"]
+    bone: Palette["primary"]
 
   }
   interface PaletteOptions {
@@ -37,6 +39,7 @@ declare module "@mui/material/styles/createPalette" {
     metallicSunburst: PaletteOptions["primary"]
     alabaster: PaletteOptions["primary"]
     kobe: PaletteOptions["primary"]
+    bone: PaletteOptions["primary"]
 
   }
 }
@@ -51,6 +54,9 @@ const themePalette = createTheme({
   palette: {
     text: {
       primary: PALETTE.Xiketic
+    },
+    bone: {
+      main: PALETTE.Bone
     },
     primary: {
       main: PALETTE.DarkOliveGreen,

@@ -7,3 +7,4 @@ export { default as Address } from './Address';
 export { default as Data } from './Data';
 export { default as Map } from './Map';
 export { default as Navigation } from './Navigation';
+export { default as Hero } from './Hero';

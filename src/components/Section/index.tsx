@@ -25,7 +25,7 @@ export type SectionProps = {
 >;
 
 const SectionStyled = styled(Container)<SectionProps>(
-  ({ theme, spacing = 3, image, color, type }) => ({
+  ({ theme, spacing = 4, image, color, type }) => ({
     overflow: 'hidden',
     position: 'relative',
     paddingTop: theme.spacing(spacing / 2),

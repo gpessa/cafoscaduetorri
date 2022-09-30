@@ -76,8 +76,9 @@ const Navigation: React.FC = () => {
     href: string;
     title: JSX.Element;
   }[] = [
-      { href: "/ca-tuate", title: <Trans>Ca&apos; Tuate</Trans> },
-      { href: "/", title: <Trans>Ca&apos; Fosca</Trans> },
+      { href: "/", title: <Trans>Ca&apos; Fosca Bed &amp; Breackfast</Trans> },
+      { href: "/ca-tuate", title: <Trans>Ca&apos; Tuate monolocali</Trans> },
+      { href: '/#price', title: <Trans>Prezzi</Trans> },
       { href: '/#contacts', title: <Trans>Contatti</Trans> }
     ]
 

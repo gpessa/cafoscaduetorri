@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import Head from 'next/head';
 import { t } from '@lingui/macro';
-import { Address, Columns, Gallery, Map, Section, Title } from 'components';
+import { Address, Columns, Gallery, Hero, Map, Section, Title } from 'components';
 import { address } from './_app';
 export { getStaticProps } from '../utility';
 import { Trans } from '@lingui/macro';
@@ -9,24 +9,24 @@ import { Typography, styled } from '@mui/material';
 import { BREAKPOINT } from 'theme';
 
 const images = [
-  { caption: t``, src: require("../assets/photos/senza titolo-41-2.jpg") },
-  { caption: t``, src: require("../assets/photos/senza titolo-47.jpg") },
-  { caption: t``, src: require("../assets/photos/senza titolo-49.jpg") },
-  { caption: t``, src: require("../assets/photos/senza titolo-52-2.jpg") },
-  // { caption: t``, src: require("../assets/photos/senza titolo-72.jpg") },
-  // { caption: t``, src: require("../assets/photos/senza titolo-76.jpg") },
-  // { caption: t``, src: require("../assets/photos/senza titolo-80.jpg") },
-  // { caption: t``, src: require("../assets/photos/senza titolo-82.jpg") },
-  { caption: t``, src: require("../assets/photos/senza titolo-88.jpg") },
-  { caption: t``, src: require("../assets/photos/senza titolo-92.jpg") },
-  { caption: t``, src: require("../assets/photos/senza titolo-98-2.jpg") },
-  // { caption: t``, src: require("../assets/photos/senza titolo-115.jpg") },
-  // { caption: t``, src: require("../assets/photos/senza titolo-122.jpg") },
-  // { caption: t``, src: require("../assets/photos/senza titolo-126.jpg") },
-  // { caption: t``, src: require("../assets/photos/senza titolo-134.jpg") },
-  { caption: t``, src: require("../assets/photos/senza titolo-154.jpg") },
-  { caption: t``, src: require("../assets/photos/senza titolo-156.jpg") },
-  { caption: t``, src: require("../assets/photos/senza titolo-158.jpg") },
+  { caption: t``, src: require("../assets/photos/senza_titolo-41-2.jpg") },
+  { caption: t``, src: require("../assets/photos/senza_titolo-47.jpg") },
+  { caption: t``, src: require("../assets/photos/senza_titolo-49.jpg") },
+  { caption: t``, src: require("../assets/photos/senza_titolo-52-2.jpg") },
+  // { caption: t``, src: require("../assets/photos/senza_titolo-72.jpg") },
+  // { caption: t``, src: require("../assets/photos/senza_titolo-76.jpg") },
+  // { caption: t``, src: require("../assets/photos/senza_titolo-80.jpg") },
+  // { caption: t``, src: require("../assets/photos/senza_titolo-82.jpg") },
+  { caption: t``, src: require("../assets/photos/senza_titolo-88.jpg") },
+  { caption: t``, src: require("../assets/photos/senza_titolo-92.jpg") },
+  { caption: t``, src: require("../assets/photos/senza_titolo-98-2.jpg") },
+  // { caption: t``, src: require("../assets/photos/senza_titolo-115.jpg") },
+  // { caption: t``, src: require("../assets/photos/senza_titolo-122.jpg") },
+  // { caption: t``, src: require("../assets/photos/senza_titolo-126.jpg") },
+  // { caption: t``, src: require("../assets/photos/senza_titolo-134.jpg") },
+  { caption: t``, src: require("../assets/photos/senza_titolo-154.jpg") },
+  { caption: t``, src: require("../assets/photos/senza_titolo-156.jpg") },
+  { caption: t``, src: require("../assets/photos/senza_titolo-158.jpg") },
 ];
 
 const SectionMap = styled(Map)(({ theme }) => ({
@@ -44,49 +44,49 @@ const Home: NextPage = () => {
 
 
   const images_outside = [
-    { caption: t`P.zza Mercanzia`, src: require("../assets/photos/senza titolo-2-2.jpg") },
-    { caption: t`Ingresso`, src: require("../assets/photos/senza titolo-13-3.jpg") },
-    { caption: t`Ingresso`, src: require("../assets/photos/senza titolo-17-3.jpg") },
-    { caption: t`L'ascensore`, src: require("../assets/photos/senza titolo-24-3.jpg") },
+    { caption: t`P.zza Mercanzia`, src: require("../assets/photos/senza_titolo-2-2.jpg") },
+    { caption: t`Ingresso`, src: require("../assets/photos/senza_titolo-13-3.jpg") },
+    { caption: t`Ingresso`, src: require("../assets/photos/senza_titolo-17-3.jpg") },
+    { caption: t`L'ascensore`, src: require("../assets/photos/senza_titolo-24-3.jpg") },
   ]
 
   const images_entrance = [
-    { caption: t`Salone stuccato`, src: require("../assets/photos/senza titolo-70-2.jpg") },
-    { caption: t`Salone stuccato`, src: require("../assets/photos/senza titolo-74-2.jpg") },
-    { caption: t`La veranda`, src: require("../assets/photos/senza titolo-105.jpg") },
-    { caption: t`La veranda`, src: require("../assets/photos/senza titolo-113.jpg") },
+    { caption: t`Salone stuccato`, src: require("../assets/photos/senza_titolo-70-2.jpg") },
+    { caption: t`Salone stuccato`, src: require("../assets/photos/senza_titolo-74-2.jpg") },
+    { caption: t`La veranda`, src: require("../assets/photos/senza_titolo-105.jpg") },
+    { caption: t`La veranda`, src: require("../assets/photos/senza_titolo-113.jpg") },
   ]
 
   const images_terrace_outside = [
-    { caption: t``, src: require("../assets/photos/senza titolo-64-2.jpg") },
-    { caption: t``, src: require("../assets/photos/senza titolo-149.jpg") },
-    { caption: t``, src: require("../assets/photos/senza titolo-153.jpg") },
-    { caption: t``, src: require("../assets/photos/senza titolo-130.jpg") },
-    { caption: t``, src: require("../assets/photos/senza titolo-128.jpg") },
-    { caption: t``, src: require("../assets/photos/senza titolo-118.jpg") },
+    { caption: t``, src: require("../assets/photos/senza_titolo-64-2.jpg") },
+    { caption: t``, src: require("../assets/photos/senza_titolo-149.jpg") },
+    // { caption: t``, src: require("../assets/photos/senza_titolo-153.jpg") },
+    { caption: t``, src: require("../assets/photos/senza_titolo-130.jpg") },
+    { caption: t``, src: require("../assets/photos/senza_titolo-128.jpg") },
+    // { caption: t``, src: require("../assets/photos/senza_titolo-118.jpg") },
   ]
 
   const images_living_room = [
-    { caption: t``, src: require("../assets/photos/senza titolo-78-2.jpg") },
-    { caption: t``, src: require("../assets/photos/senza titolo-161.jpg") },
-    { caption: t``, src: require("../assets/photos/senza titolo-84.jpg") },
+    { caption: t``, src: require("../assets/photos/senza_titolo-78-2.jpg") },
+    { caption: t``, src: require("../assets/photos/senza_titolo-161.jpg") },
+    { caption: t``, src: require("../assets/photos/senza_titolo-84.jpg") },
   ]
 
   const images_20_room_double = [
-    { caption: t`Camera anni 20 con letti singole`, src: require("../assets/photos/senza titolo-36.jpg") },
-    { caption: t`Camera anni 20 con letti singole`, src: require("../assets/photos/senza titolo-40.jpg") },
+    { caption: t`Camera anni 20 con letti singole`, src: require("../assets/photos/senza_titolo-36.jpg") },
+    { caption: t`Camera anni 20 con letti singole`, src: require("../assets/photos/senza_titolo-40.jpg") },
   ]
 
   const images_20_room_queen = [
-    { caption: t`Camera anni 20 con letto matrimonaiale`, src: require("../assets/photos/senza titolo-25-2.jpg") },
-    { caption: t`Camera anni 20 con letto matrimonaiale`, src: require("../assets/photos/senza titolo-30.jpg") },
-    { caption: t`Camera anni 20 con letto matrimonaiale`, src: require("../assets/photos/senza titolo-34.jpg") }
+    { caption: t`Camera anni 20 con letto matrimonaiale`, src: require("../assets/photos/senza_titolo-25-2.jpg") },
+    { caption: t`Camera anni 20 con letto matrimonaiale`, src: require("../assets/photos/senza_titolo-30.jpg") },
+    { caption: t`Camera anni 20 con letto matrimonaiale`, src: require("../assets/photos/senza_titolo-34.jpg") }
   ];
 
   const images_blue_room = [
-    { caption: t``, src: require("../assets/photos/senza titolo-5-2.jpg") },
-    { caption: t``, src: require("../assets/photos/senza titolo-13-2.jpg") },
-    { caption: t``, src: require("../assets/photos/senza titolo-23-2.jpg") },
+    { caption: t`La camera blu`, src: require("../assets/photos/senza_titolo-5-2.jpg") },
+    { caption: t`La camera blu`, src: require("../assets/photos/senza_titolo-13-2.jpg") },
+    { caption: t`La camera blu`, src: require("../assets/photos/senza_titolo-23-2.jpg") },
   ];
 
   const images_bed = [
@@ -94,6 +94,7 @@ const Home: NextPage = () => {
     ...images_20_room_queen,
     ...images_blue_room,
   ]
+
 
   return (
     <>
@@ -104,31 +105,30 @@ const Home: NextPage = () => {
       </Head>
 
       <section>
-        <Section>
-          <Typography variant='h2' paragraph>Ca Fosca</Typography>
-        </Section>
+        <Hero image={require("../assets/photos/senza_titolo-78-2.jpg").default.src} />
+
         <Columns
           left={
             <Gallery images={images_outside} xs={6} md={6} />
           }
           right={
             <>
-              <Title title={<Trans>La casa</Trans>} />
+              <Typography variant='h2' paragraph>Ca Fosca</Typography>
               <Trans>
-                <Typography paragraph variant='body2'>
+                <Typography paragraph>
                   Sotto le Due Torri, a destra si scorge la P.zza Mercanzia su cui si affaccia,
                   in angolo tra via Castiglione e via Caprarie, uno dei rari
                   palazzi Liberty di Bologna.
                 </Typography>
 
-                <Typography paragraph variant='body2'>
-                  Entrate...
-                </Typography>
-
-                <Typography paragraph variant='body2'>
+                <Typography paragraph>
                   La boiserie alle pareti e
                   l&apos;ascensore in legno e ferro battuto del 1912 così decò, vi
                   porteranno all&apos;attico.
+                </Typography>
+
+                <Typography paragraph variant="body2">
+                  Entrate...
                 </Typography>
               </Trans>
             </>
@@ -137,14 +137,14 @@ const Home: NextPage = () => {
         <Section spacing={10}>
           <Title title={<Trans>Il salone e la veranda</Trans>} />
           <Trans>
-            <Typography paragraph variant='body2'>
+            <Typography paragraph>
               La Ca&apos;Fosca vi accoglierà con il salone
               stuccato a marmorino e il soffitto stuccato a roselline, con le sue
               vetrate liberty, con la luce irreale della veranda verde e turchese
               avvolta da bagliori d&apos;oro dei vetri cattedrale.
             </Typography>
 
-            <Typography paragraph variant='body2'>
+            <Typography paragraph>
               Così, vi offrirà un
               aperitivo con tipici assaggi bolognesi o un the aromatico con
               biscotteria assortita.
@@ -162,13 +162,13 @@ const Home: NextPage = () => {
             <>
               <Title title={<Trans>La terrazza</Trans>} />
               <Trans>
-                <Typography paragraph variant='body2'>
+                <Typography paragraph variant="body2">
                   In terrazza, come dalla veranda, vedrete Bologna e le sue torri
                   mozze, i merli, le cupole verdi, S. Petronio e palazzo Re Enzo e su,
                   fino ai colli, con un solo sguardo.
                 </Typography>
 
-                <Typography paragraph variant='body2'>
+                <Typography paragraph variant="body2">
                   Da qui la mattina si levano i
                   profumi della storica Panetteria Atti e quelli del Mercato Clavature
                   sottostanti.
@@ -181,12 +181,12 @@ const Home: NextPage = () => {
           <Title title={<Trans>Il salotto</Trans>} />
 
           <Trans>
-            <Typography paragraph variant='body2'>
+            <Typography paragraph>
               Adesso rilassatevi, dopo il viaggio o la giornata di lavoro, nelle
               vostre camere.
             </Typography>
 
-            <Typography paragraph variant='body2'>
+            <Typography paragraph>
               Bologna vi attenderà fino a tardi con i suoi ristoranti, le enoteche, i teatri e le cantine di jazz.
               Sarà Ca&apos;Fosca a prenotare per voi, mentre starete degustando ottimi vini e formaggi tipici.
             </Typography>
@@ -250,14 +250,17 @@ const Home: NextPage = () => {
           </Typography>
         </Section>
 
-        <Section spacing={4}>
-          <Title title={
-            <Trans>Prezzi</Trans>} />
-          <Typography>
-            CAMERA DOPPIA uso singola con bagno € 110/170
-            CAMERA DOPPIA con bagno € 130/250 Letto aggiunto € 160/280
-            Bambini in camera genitori: sotto i 2 anni, gratuito
+        <Section spacing={4}
+          id="price">
+          {/* <Title title={
+            <Trans>Prezzi</Trans>} /> */}
+
+          <Typography variant='h2' paragraph>Prezzi</Typography>
+          <Typography component="ul" paragraph>
+            <Typography component="li"><strong>Camera doppia uso singola</strong> con bagno € 110/170</Typography>
+            <Typography component="li"><strong>Camera doppia</strong> con bagno € 130/250 Letto aggiunto € 160/280</Typography>
           </Typography>
+          <Typography component="small" variant="small">Bambini in camera genitori: sotto i 2 anni, gratuito</Typography>
         </Section>
       </section>
 
