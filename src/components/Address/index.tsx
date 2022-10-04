@@ -7,10 +7,25 @@ import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
 import WhatsappOutlinedIcon from '@mui/icons-material/WhatsApp';
 import { Box, Stack, Typography } from '@mui/material';
 
+export interface AddressProps {
+  bank?: JSX.Element;
+  name?: string;
+  email?: string;
+  addressCountry?: string;
+  whatsapp?: string;
+  postalCode?: string;
+  addressRegion?: string;
+  streetAddress?: string;
+  addressLocality?: string;
+  id?: string;
+  mobile?: string;
+  telephone?: string;
+  className?: string;
+}
 
 const Address: React.FC<AddressProps> = ({
   name,
-  country,
+  addressCountry,
   addressLocality,
   id,
   bank,
@@ -21,12 +36,12 @@ const Address: React.FC<AddressProps> = ({
   telephone,
   email,
   mobile,
-  ...Addressprops
+  ...props
 }) => {
   const hasAddress = streetAddress != undefined;
 
   return (
-    <Stack itemScope {...Addressprops} spacing={2}>
+    <Stack itemScope {...props} spacing={2}>
       <Typography variant="h6">{name}</Typography>
 
       {hasAddress && (
@@ -35,7 +50,7 @@ const Address: React.FC<AddressProps> = ({
           <span>{addressLocality}</span>
           <br />
           <span>{postalCode}</span>, <span>{addressRegion}</span> (
-          <span>{country}</span>)
+          <span>{addressCountry}</span>)
         </Box>
       )}
 
@@ -85,21 +100,5 @@ const Address: React.FC<AddressProps> = ({
     </Stack>
   );
 };
-
-export interface AddressProps {
-  bank?: JSX.Element;
-  name?: string;
-  email?: string;
-  country?: string;
-  whatsapp?: string;
-  postalCode?: string;
-  addressRegion?: string;
-  streetAddress?: string;
-  addressLocality?: string;
-  id?: string;
-  mobile?: string;
-  telephone?: string;
-  className?: string;
-}
 
 export default Address;

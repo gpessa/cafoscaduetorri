@@ -1,21 +1,23 @@
-import { createTheme, responsiveFontSizes } from '@mui/material/styles';
+import {
+  createTheme,
+  responsiveFontSizes,
+  Breakpoint,
+} from '@mui/material/styles';
 
 const PALETTE = {
-  MetallicSunburst: "#998D5B",
-  Ecru: "#B8A973",
-  Alabaster: "#E5E7D8",
-  Kobe: "#832E10",
-  Xiketic: "#131121",
-  Artichoke: "#868960",
-  DarkOliveGreen: "#607045",
-  Bone: "#D7D1BA"
-}
+  MetallicSunburst: '#998D5B',
+  Ecru: '#B8A973',
+  Alabaster: '#E5E7D8',
+  Kobe: '#832E10',
+  Xiketic: '#131121',
+  Artichoke: '#868960',
+  DarkOliveGreen: '#607045',
+  Bone: '#D7D1BA',
+};
 
+export const BREAKPOINT: Breakpoint = 'md';
 
-export const BREAKPOINT = "md"
-
-export const PRODUCT_GUTTER = 5
-
+export const PRODUCT_GUTTER = 5;
 
 declare module '@mui/material/Typography/Typography' {
   interface TypographyPropsVariantOverrides {
@@ -23,29 +25,27 @@ declare module '@mui/material/Typography/Typography' {
   }
 }
 
-declare module "@mui/material/styles/createPalette" {
+declare module '@mui/material/styles/createPalette' {
   interface Palette {
-    artichoke: Palette["primary"]
-    ecru: Palette["primary"]
-    metallicSunburst: Palette["primary"]
-    alabaster: Palette["primary"]
-    kobe: Palette["primary"]
-    bone: Palette["primary"]
-
+    artichoke: Palette['primary'];
+    ecru: Palette['primary'];
+    metallicSunburst: Palette['primary'];
+    alabaster: Palette['primary'];
+    kobe: Palette['primary'];
+    bone: Palette['primary'];
   }
   interface PaletteOptions {
-    artichoke: PaletteOptions["primary"]
-    ecru: PaletteOptions["primary"]
-    metallicSunburst: PaletteOptions["primary"]
-    alabaster: PaletteOptions["primary"]
-    kobe: PaletteOptions["primary"]
-    bone: PaletteOptions["primary"]
-
+    artichoke: PaletteOptions['primary'];
+    ecru: PaletteOptions['primary'];
+    metallicSunburst: PaletteOptions['primary'];
+    alabaster: PaletteOptions['primary'];
+    kobe: PaletteOptions['primary'];
+    bone: PaletteOptions['primary'];
   }
 }
 
-const FONT_BASE = "Raleway";
-const FONT_TITLE = "Lora"
+const FONT_BASE = 'Raleway';
+const FONT_TITLE = 'Lora';
 
 const themePalette = createTheme({
   typography: {
@@ -53,35 +53,34 @@ const themePalette = createTheme({
   },
   palette: {
     text: {
-      primary: PALETTE.Xiketic
+      primary: PALETTE.Xiketic,
     },
     bone: {
-      main: PALETTE.Bone
+      main: PALETTE.Bone,
     },
     primary: {
       main: PALETTE.DarkOliveGreen,
     },
     secondary: {
-      main: PALETTE.Kobe
+      main: PALETTE.Kobe,
     },
     artichoke: {
-      main: PALETTE.Artichoke
+      main: PALETTE.Artichoke,
     },
     ecru: {
-      main: PALETTE.Ecru
+      main: PALETTE.Ecru,
     },
     metallicSunburst: {
-      main: PALETTE.MetallicSunburst
+      main: PALETTE.MetallicSunburst,
     },
     alabaster: {
-      main: PALETTE.Alabaster
+      main: PALETTE.Alabaster,
     },
     kobe: {
-      main: PALETTE.Kobe
-    }
-  }
-})
-
+      main: PALETTE.Kobe,
+    },
+  },
+});
 
 const theme = createTheme(themePalette, {
   shape: {
@@ -90,7 +89,7 @@ const theme = createTheme(themePalette, {
   spacing: (factor: number) => `${7 * factor}px `,
   typography: {
     small: {
-      fontSize: "0.85rem",
+      fontSize: '0.85rem',
     },
     h1: {
       fontFamily: FONT_TITLE,
@@ -130,62 +129,62 @@ const theme = createTheme(themePalette, {
     },
     caption: {
       fontWeight: 600,
-      color: PALETTE.Alabaster
+      color: PALETTE.Alabaster,
     },
     body2: {
       fontSize: 24,
-    }
+    },
   },
   components: {
     MuiTableCell: {
       defaultProps: {
-        size: "small",
+        size: 'small',
       },
       styleOverrides: {
         root: {
-          fontSize: "1rem",
-          color: 'inherit'
+          fontSize: '1rem',
+          color: 'inherit',
         },
       },
     },
     MuiTextField: {
       defaultProps: {
-        variant: "standard",
+        variant: 'standard',
       },
     },
     MuiTypography: {
       styleOverrides: {
         gutterBottom: {
-          marginBottom: "0.5em",
+          marginBottom: '0.5em',
         },
       },
     },
     MuiButton: {
       styleOverrides: {
         root: {
-          fontWeight: "bold",
+          fontWeight: 'bold',
         },
       },
       defaultProps: {
-        variant: "contained",
+        variant: 'contained',
       },
     },
     MuiLink: {
       styleOverrides: {
         root: {
           textDecoration: 'none',
-          fontWeight: 600
+          fontWeight: 600,
         },
-      }
+      },
     },
     MuiChip: {
       styleOverrides: {
         root: {
-          fontWeight: 'bold'
-        }
-      }
-    }
+          fontWeight: 'bold',
+        },
+      },
+    },
   },
-})
+});
 
-export default responsiveFontSizes(theme)
+export default responsiveFontSizes(theme);

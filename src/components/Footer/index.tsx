@@ -2,8 +2,7 @@ import { Section } from 'components';
 import React from 'react';
 import { Trans } from '@lingui/macro';
 import { styled, Typography } from '@mui/material';
-import { address } from 'pages/_app';
-
+import { organization } from 'contasts';
 
 const BottomPartStyled = styled(Section)(({ theme }) => ({
   color: theme.palette.grey[500],
@@ -14,7 +13,7 @@ const Footer: React.FC = () => (
   <footer>
     <BottomPartStyled>
       <Typography variant="small">
-        <Trans>{address.name}</Trans>
+        <Trans>{organization.name}</Trans>
       </Typography>
     </BottomPartStyled>
   </footer>

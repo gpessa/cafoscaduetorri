@@ -1,31 +1,18 @@
-
-import { Avatar, IconButton, Menu, MenuItem, styled } from "@mui/material";
-import { useRouter } from "next/router";
-import * as React from "react";
-import { useState } from "react";
+import { Avatar, IconButton, Menu, MenuItem, styled } from '@mui/material';
+import { useRouter } from 'next/router';
+import * as React from 'react';
+import { useState } from 'react';
 import NextLink from 'next/link';
 
 import FlagFr from '../../../assets/flags/fr.svg';
 import FlagEn from '../../../assets/flags/gb.svg';
 import FlagIt from '../../../assets/flags/it.svg';
 
-
 const FLAGS = {
   en: FlagEn,
   fr: FlagFr,
   it: FlagIt,
 };
-
-
-
-const LanguageStyled = styled(IconButton)(({ theme }) => ({
-  transform: 'translateY(-50%)',
-  right: theme.spacing(4),
-  position: 'absolute',
-  top: '50%',
-}));
-
-
 
 const LanguageSelector: React.FC = () => {
   const { locale: currentLocale, locales } = useRouter();
@@ -43,12 +30,12 @@ const LanguageSelector: React.FC = () => {
 
   return hasMultipleLocales ? (
     <>
-      <LanguageStyled onClick={handleClick}>
+      <IconButton onClick={handleClick}>
         <Avatar
           src={FLAGS[currentLocale as keyof typeof FLAGS].src}
           sx={{ width: 24, height: 24 }}
         />
-      </LanguageStyled>
+      </IconButton>
 
       <Menu
         anchorEl={anchorEl}
@@ -80,7 +67,7 @@ const LanguageSelector: React.FC = () => {
         ))}
       </Menu>
     </>
-  ) : null
-}
+  ) : null;
+};
 
-export default LanguageSelector
+export default LanguageSelector;
