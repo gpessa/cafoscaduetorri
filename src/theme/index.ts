@@ -27,20 +27,20 @@ declare module '@mui/material/Typography/Typography' {
 
 declare module '@mui/material/styles/createPalette' {
   interface Palette {
-    artichoke: Palette['primary'];
-    ecru: Palette['primary'];
-    metallicSunburst: Palette['primary'];
-    alabaster: Palette['primary'];
-    kobe: Palette['primary'];
-    bone: Palette['primary'];
+    artichoke: PaletteColor;
+    ecru: PaletteColor;
+    metallicSunburst: PaletteColor;
+    alabaster: PaletteColor;
+    kobe: PaletteColor;
+    bone: PaletteColor;
   }
   interface PaletteOptions {
-    artichoke: PaletteOptions['primary'];
-    ecru: PaletteOptions['primary'];
-    metallicSunburst: PaletteOptions['primary'];
-    alabaster: PaletteOptions['primary'];
-    kobe: PaletteOptions['primary'];
-    bone: PaletteOptions['primary'];
+    artichoke: PaletteColorOptions;
+    ecru: PaletteColorOptions;
+    metallicSunburst: PaletteColorOptions;
+    alabaster: PaletteColorOptions;
+    kobe: PaletteColorOptions;
+    bone: PaletteColorOptions;
   }
 }
 

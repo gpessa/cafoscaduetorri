@@ -1,20 +1,15 @@
-import { NextPage } from 'next';
-import Head from 'next/head';
-import { t } from '@lingui/macro';
+import { t, Trans } from '@lingui/macro';
+import { Typography } from '@mui/material';
 import {
-  Address,
   Columns,
   Gallery,
-  Hero,
-  Map,
-  Section,
-  Title,
+  Hero, Section,
+  Title
 } from 'components';
-import { organization, shortName } from 'contasts';
+import { shortName } from 'contasts';
+import { NextPage } from 'next';
+import Head from 'next/head';
 export { getStaticProps } from '../utility';
-import { Trans } from '@lingui/macro';
-import { Typography, styled, Grid } from '@mui/material';
-import { BREAKPOINT } from 'theme';
 
 const images = [
   { caption: t``, src: require('../assets/photos/senza_titolo-41-2.jpg') },

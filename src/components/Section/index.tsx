@@ -1,6 +1,6 @@
+import { Container, ContainerProps, styled } from '@mui/material';
 import React from 'react';
 import { BREAKPOINT } from 'theme';
-import { Container, ContainerProps, Palette, styled } from '@mui/material';
 
 
 const DIMENSION_CONFIGURATION = {
@@ -15,9 +15,8 @@ const DIMENSION_CONFIGURATION = {
 };
 
 export type SectionProps = {
-  image?: 'dots';
   type?: 'vertical' | 'horizontal';
-  color?: keyof Palette;
+  color?: "artichoke" | "ecru" | "metallicSunburst" | "alabaster" | "kobe" | "bone" | "primary"
   spacing?: number;
 } & Pick<
   ContainerProps,
@@ -25,7 +24,7 @@ export type SectionProps = {
 >;
 
 const SectionStyled = styled(Container)<SectionProps>(
-  ({ theme, spacing = 4, image, color, type }) => ({
+  ({ theme, spacing = 4, color, type }) => ({
     overflow: 'hidden',
     position: 'relative',
     paddingTop: theme.spacing(spacing / 2),
@@ -35,8 +34,6 @@ const SectionStyled = styled(Container)<SectionProps>(
       paddingBottom: theme.spacing(spacing),
     },
     '&:before': {
-      // backgroundImage:
-      //   image && `url(${withPrefix(`static/patterns/${image}.jpg`)})`,
       backgroundColor: color && color,
       backgroundSize: 'cover',
       position: 'absolute',
