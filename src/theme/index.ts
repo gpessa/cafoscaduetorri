@@ -110,7 +110,7 @@ const theme = createTheme(themePalette, {
       fontSize: 35,
     },
     h4: {
-      fontFamily: FONT_TITLE,
+      // fontFamily: FONT_TITLE,
       fontWeight: 600,
       lineHeight: 1.1,
       fontSize: 28,

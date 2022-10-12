@@ -303,10 +303,7 @@ const Home: NextPage = () => {
           </Typography>
         </Section>
 
-        <Section spacing={4} id="price">
-          {/* <Title title={
-            <Trans>Prezzi</Trans>} /> */}
-
+        <Section spacing={10} id="price" color="primary">
           <Typography variant="h2" paragraph>
             Prezzi
           </Typography>
