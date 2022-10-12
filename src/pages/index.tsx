@@ -1,5 +1,5 @@
 import { t, Trans } from '@lingui/macro';
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import {
   Columns,
   Gallery,
@@ -275,7 +275,28 @@ const Home: NextPage = () => {
           </Typography>
         </Section>
 
-        <Section spacing={4}>
+        <Section spacing={10} id="price" color="primary">
+          <Box mb={10}>
+            <Typography variant="h2" paragraph>
+              Prezzi
+            </Typography>
+            <Typography component="ul" paragraph>
+              <Typography component="li">
+                <strong>Camera doppia uso singola</strong> con bagno € 110/170
+              </Typography>
+              <Typography component="li">
+                <strong>Camera doppia</strong> con bagno € 130/250 Letto aggiunto
+                € 160/280
+              </Typography>
+            </Typography>
+            <Typography component="small" variant="small">
+              Bambini in camera genitori: sotto i 2 anni, gratuito
+            </Typography>
+            {/* </Section> */}
+          </Box>
+
+
+          {/* <Section spacing={10} color="primary"> */}
           <Title title={<Trans>Prenotazioni</Trans>} />
           <Typography paragraph>
             A caparra è richiesto prepagamento di 1 notte NON RIMBORSABILE a
@@ -303,29 +324,7 @@ const Home: NextPage = () => {
           </Typography>
         </Section>
 
-        <Section spacing={10} id="price" color="primary">
-          <Typography variant="h2" paragraph>
-            Prezzi
-          </Typography>
-          <Typography component="ul" paragraph>
-            <Typography component="li">
-              <strong>Camera doppia uso singola</strong> con bagno € 110/170
-            </Typography>
-            <Typography component="li">
-              <strong>Camera doppia</strong> con bagno € 130/250 Letto aggiunto
-              € 160/280
-            </Typography>
-          </Typography>
-          <Typography component="small" variant="small">
-            Bambini in camera genitori: sotto i 2 anni, gratuito
-          </Typography>
-        </Section>
       </section>
-
-      {/* 
-      <Section spacing={4}>
-        <Gallery images={images} />
-      </Section> */}
     </>
   );
 };
