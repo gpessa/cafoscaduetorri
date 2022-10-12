@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://cafoscaduetorri.com/
+Host: https://cafoscaduetorri.netlify.app/
 
 # Sitemaps
-Sitemap: https://cafoscaduetorri.com/sitemap.xml
+Sitemap: https://cafoscaduetorri.netlify.app/sitemap.xml
