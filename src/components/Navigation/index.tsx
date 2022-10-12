@@ -3,15 +3,14 @@ import Menu from '@mui/icons-material/Menu';
 import {
   AppBar,
   Box,
-  Button,
-  Divider,
+  Button, Divider,
   IconButton,
   List,
   ListItem,
   styled,
   Toolbar,
   useScrollTrigger,
-  useTheme,
+  useTheme
 } from '@mui/material';
 import { organization } from 'contasts';
 import Link from 'next/link';
@@ -22,6 +21,8 @@ import Logo from './Logo';
 const BREAKPOINT = 'lg';
 
 const NavigationMobileMenu = styled(List)(({ theme }) => ({
+  paddingRight: theme.spacing(2),
+  paddingLeft: theme.spacing(2),
   display: 'block',
   [theme.breakpoints.up(BREAKPOINT)]: {
     display: 'none',
@@ -94,11 +95,11 @@ const Navigation: React.FC = () => {
     href: string;
     title: JSX.Element | string;
   }[] = [
-    { href: '/', title: organization.name },
-    { href: '/ca-tuate', title: <Trans>Ca&apos; Tuate - Monolocali</Trans> },
-    { href: '/#price', title: <Trans>Prezzi</Trans> },
-    { href: '/#contacts', title: <Trans>Contatti</Trans> },
-  ];
+      { href: '/', title: organization.name },
+      { href: '/ca-tuate', title: <Trans>Ca&apos; Tuate - Monolocali</Trans> },
+      { href: '/#price', title: <Trans>Prezzi</Trans> },
+      { href: '/#contacts', title: <Trans>Contatti</Trans> },
+    ];
 
   const handleMenuToggle = () => {
     setOpen((open) => !open);
