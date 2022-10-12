@@ -6,7 +6,7 @@ import {
   Hero, Section,
   Title
 } from 'components';
-import { shortName } from 'contasts';
+import { organization, shortName } from 'contasts';
 import { NextPage } from 'next';
 import Head from 'next/head';
 export { getStaticProps } from '../utility';
@@ -33,8 +33,8 @@ const images = [
 ];
 
 const Home: NextPage = () => {
-  const pageTitle = t``;
-  const pageDescription = t``;
+  const pageTitle = organization.name;
+  const pageDescription = organization.description;
 
   const images_outside = [
     {
