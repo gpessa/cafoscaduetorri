@@ -4,8 +4,10 @@ import React from 'react';
 
 import { Trans } from '@lingui/macro';
 import { NavigateBefore, NavigateNext } from '@mui/icons-material';
-import { Button, ButtonBase, Dialog, styled, Typography } from '@mui/material';
+import { Button, ButtonBase, Dialog, IconButton, styled, Typography } from '@mui/material';
 import { height } from '@mui/system';
+import CancelIcon from '@mui/icons-material/Cancel';
+
 
 const ButtonBackStyled = styled(ButtonBase)({
   top: 0,
@@ -38,7 +40,6 @@ const ImageStyled = styled('img')({
 
 const StyledCaption = styled(Typography)(({ theme }) => ({
   backgroundColor: theme.palette.common.white,
-  // fontSize: theme.typography.small.fontSize,
   paddingRight: theme.spacing(2),
   paddingLeft: theme.spacing(2),
   padding: theme.spacing(1),
@@ -46,6 +47,13 @@ const StyledCaption = styled(Typography)(({ theme }) => ({
   bottom: 0,
   left: 0,
 }));
+
+const StyldeClose = styled(IconButton)(({ theme }) => ({
+  position: 'absolute',
+  zIndex: 1,
+  right: 0,
+  top: 0,
+}))
 
 export type Picture = {
   src: any;
@@ -60,7 +68,6 @@ type Props = {
 const ModalGallery: React.FC<Props> = ({ render, images }) => {
   const gallery = useGallery(images);
 
-  console.log(gallery.active)
   return (
     <>
       {render(gallery)}
@@ -68,6 +75,9 @@ const ModalGallery: React.FC<Props> = ({ render, images }) => {
       <Dialog open={!!gallery.active} onClose={gallery.close} maxWidth="md" >
         {gallery.active && (
           <>
+            <StyldeClose onClick={gallery.close} color="primary" size="large">
+              <CancelIcon />
+            </StyldeClose>
 
             <ImageStyled src={gallery.active.src.default.src} />
 
