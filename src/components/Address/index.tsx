@@ -1,11 +1,12 @@
-import { Data } from 'components';
-import React from 'react';
 import { Trans } from '@lingui/macro';
-import AlternateEmailOutlinedIcon from '@mui/icons-material/AlternateEmailOutlined';
-import BadgeIcon from '@mui/icons-material/Badge';
-import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
-import WhatsappOutlinedIcon from '@mui/icons-material/WhatsApp';
+import {
+  AlternateEmail,
+  Badge, FaxOutlined, LocalPhone, Smartphone, WhatsApp
+} from '@mui/icons-material';
 import { Box, Stack, Typography } from '@mui/material';
+import { Data } from 'components';
+import Tripadvisor from 'components/Tripadvisor';
+import React from 'react';
 
 export interface AddressProps {
   bank?: JSX.Element;
@@ -20,6 +21,7 @@ export interface AddressProps {
   id?: string;
   mobile?: string;
   telephone?: string;
+  faxNumber: string;
   className?: string;
 }
 
@@ -36,6 +38,7 @@ const Address: React.FC<AddressProps> = ({
   telephone,
   email,
   mobile,
+  faxNumber,
   ...props
 }) => {
   const hasAddress = streetAddress != undefined;
@@ -45,7 +48,7 @@ const Address: React.FC<AddressProps> = ({
       <Typography variant="h6">{name}</Typography>
 
       {hasAddress && (
-        <Box itemScope mb={1}>
+        <Box itemScope>
           <div>{streetAddress}</div>
           <span>{addressLocality}</span>
           <br />
@@ -56,7 +59,7 @@ const Address: React.FC<AddressProps> = ({
 
       {mobile && (
         <Data
-          icon={<LocalPhoneOutlinedIcon />}
+          icon={<Smartphone />}
           label={<Trans>Cellulare</Trans>}
           value={mobile}
           href={`tel:${mobile.replace(/ /g, '')}`}
@@ -65,7 +68,7 @@ const Address: React.FC<AddressProps> = ({
 
       {telephone && (
         <Data
-          icon={<LocalPhoneOutlinedIcon />}
+          icon={<LocalPhone />}
           label={<Trans>Telefono</Trans>}
           value={telephone}
           href={`tel:${telephone.replace(/ /g, '')}`}
@@ -75,15 +78,23 @@ const Address: React.FC<AddressProps> = ({
       {whatsapp && (
         <Data
           label={<Trans>WhatsApp</Trans>}
-          icon={<WhatsappOutlinedIcon />}
+          icon={<WhatsApp />}
           value={whatsapp}
           href={`https://wa.me/${whatsapp.replace(/ /g, '')}`}
         />
       )}
 
+      {faxNumber && (
+        <Data
+          icon={<FaxOutlined />}
+          label={<Trans>Fax</Trans>}
+          value={faxNumber}
+        />
+      )}
+
       {email && (
         <Data
-          icon={<AlternateEmailOutlinedIcon />}
+          icon={<AlternateEmail />}
           label={<Trans>Email</Trans>}
           value={email}
           href={`mailto:${email}`}
@@ -94,9 +105,11 @@ const Address: React.FC<AddressProps> = ({
         <Data
           label={<Trans>Partita IVA</Trans>}
           value={id}
-          icon={<BadgeIcon />}
+          icon={<Badge />}
         />
       )}
+
+      {/* <Tripadvisor /> */}
     </Stack>
   );
 };

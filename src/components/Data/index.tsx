@@ -10,16 +10,21 @@ type Props = {
 };
 
 const LabelStyled = styled(Typography)(({ theme }) => ({
-  color: theme.palette.common.black,
   marginRight: theme.spacing(1),
   fontWeight: 600,
+}));
+
+const LinkStyled = styled(Link)(({ theme }) => ({
+  marginRight: theme.spacing(1),
+  fontWeight: "normal",
+  color: 'inherit'
 }));
 
 const Data: React.FC<Props> = ({ value, label, icon, href, ...props }) => (
   <Stack direction="row" alignItems="center" spacing={1} {...props}>
     {icon}
     <LabelStyled>{label}:</LabelStyled>
-    {href ? <Link href={href}>{value}</Link> : <Box>{value}</Box>}
+    {href ? <LinkStyled href={href}>{value}</LinkStyled> : <Box>{value}</Box>}
   </Stack>
 );
 
